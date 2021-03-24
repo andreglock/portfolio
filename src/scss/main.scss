@@ -1,2 +1,140 @@
+$bg-color: #212529;
+$text-color: #AB9F8D;
+$bgt-color: #21252998;
+$text-shadow: #3F3A32;
+
 // This is where you can import other stylesheets or write your scss code
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+main {
+    background-color: $bg-color;
+    color: $text-color;
+    min-height: 100vh;
+}
+
+.languages {
+    li {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 50%;
+    }
+}
+
+.hero {
+    display: flex;
+    h1 {
+        flex-grow: 1;
+        flex-basis: 150px;
+    }
+    .heroimg {
+        width: 180px;
+        height: 300px;
+        animation: infinite background-circle 4s;
+        background-image: radial-gradient(circle, transparent 0%, $bg-color 60%, $bg-color 100%), url(../images/hero1.gif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: right 0;
+    }
+}
+
+/* ANIMATE BACKGROUND 50 TO 78 */
+    /* background-image: radial-gradient(circle at 60% 30%, transparent 0%, $bg-color 60%, $bg-color 100%), url(../images/hero1.gif); */
+@keyframes background-circle {
+    
+    0%, 100% { 
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: $text-shadow;
+    }
+}
+
+.pages {    
+    width: 90vw;
+    a {      
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 67.5vw;
+        margin-top: 15px;
+        .frame {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            .inner {
+                width: 100%;
+                height: 100%;
+                background-color: $bgt-color;
+                h3, p {
+                    text-align: center;
+                    color: $text-color;
+                    text-shadow: 0 2px 2px $text-shadow, 0 -2px 2px $text-shadow, 2px 0 2px $text-shadow, -2px 0 2px $text-shadow;
+                }
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .heroimg {
+        width: 250px;
+        background-image: radial-gradient(circle at 60%, transparent 0%, $bg-color 60%, $bg-color 100%), url(../images/hero1.gif);
+        margin-right: 60px;
+    }
+
+    .languages {
+        margin-left: 10%;
+    }
+    
+    #work h2, #social h2 {
+        margin-left: 10%;
+    }
+    .pages {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        a {
+            width: 344px;
+            height: 258px;
+            margin: 10px auto;
+        }
+    }
+}
+
+.social {
+    padding-bottom: 3rem;
+    a {
+        color: $text-color;
+        i {
+            font-size: 3rem;
+        }
+    }
+}
+
+
+/* image ratio 4:3 */
+#codelicious {
+    background-image: url(../images/codelicious.png);
+}
+
+#drcarrot {
+    background-image: url(../images/drcarrot.png);
+}
+
+#animations {
+    background-image: url(../images/animations.png);
+}
+
+#functions {
+    background-image: url(../images/functions.png);
+}
+
+#design {
+    background-image: url(../images/design.png);
+}
