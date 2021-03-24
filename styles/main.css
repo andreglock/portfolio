@@ -10768,7 +10768,6 @@ main {
   .swing h1, .swing .h1 {
     text-shadow: 7px 0 10px transparent, 0 -7px 10px transparent, 0 7px 10px transparent, -7px 0 10px transparent;
     transition: 300ms;
-    border-radius: 5px;
   }
 
   .swing:hover h1, .swing:hover .h1, .swing:active h1, .swing:active .h1 {
@@ -10817,6 +10816,7 @@ main {
     color: #3F3A32;
     background-color: #AB9F8D;
     box-shadow: 0 0 20px #AB9F8D, 0 0 80px #AB9F8D, 0 0 160px #AB9F8D, 0 0 320px #AB9F8D;
+    border-radius: 60px;
     transition-delay: 1500ms;
   }
 
