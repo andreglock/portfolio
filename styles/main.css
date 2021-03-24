@@ -10631,56 +10631,103 @@ main {
   color: #AB9F8D;
   min-height: 100vh;
 }
-main .languages li {
+
+.languages li {
   display: flex;
   justify-content: space-between;
   list-style: none;
   width: 50%;
 }
-main .hero {
+
+.hero {
   display: flex;
 }
-main .hero .heroimg {
-  width: 65%;
-  height: 100%;
-  background-image: radial-gradient(circle at 60% 30%, transparent 0%, #212529 60%, #212529 100%), url(../images/hero1.gif);
-  height: 50vh;
+.hero h1, .hero .h1 {
+  flex-grow: 1;
+  flex-basis: 150px;
+}
+.hero .heroimg {
+  width: 180px;
+  height: 300px;
+  animation: infinite background-circle 4s;
+  background-image: radial-gradient(circle, transparent 0%, #212529 60%, #212529 100%), url(../images/hero1.gif);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: 100%;
+  background-position-x: right 0;
 }
-main .pages {
+
+/* ANIMATE BACKGROUND 50 TO 78 */
+/* background-image: radial-gradient(circle at 60% 30%, transparent 0%, $bg-color 60%, $bg-color 100%), url(../images/hero1.gif); */
+@keyframes background-circle {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #3F3A32;
+  }
+}
+.pages {
   width: 90vw;
 }
-main .pages a {
+.pages a {
   text-decoration: none;
   display: block;
   width: 100%;
   height: 67.5vw;
   margin-top: 15px;
 }
-main .pages a .frame {
+.pages a .frame {
   width: 100%;
   height: 100%;
   background-size: contain;
 }
-main .pages a .frame .inner {
+.pages a .frame .inner {
   width: 100%;
   height: 100%;
   background-color: #21252998;
 }
-main .pages a .frame .inner h3, main .pages a .frame .inner .h3, main .pages a .frame .inner p {
+.pages a .frame .inner h3, .pages a .frame .inner .h3, .pages a .frame .inner p {
   text-align: center;
   color: #AB9F8D;
   text-shadow: 0 2px 2px #3F3A32, 0 -2px 2px #3F3A32, 2px 0 2px #3F3A32, -2px 0 2px #3F3A32;
 }
-main .social {
+.pages a .frame .inner p {
+  font-size: 1em;
+}
+
+@media (min-width: 576px) {
+  .heroimg {
+    width: 250px;
+    background-image: radial-gradient(circle at 60%, transparent 0%, #212529 60%, #212529 100%), url(../images/hero1.gif);
+    margin-right: 60px;
+  }
+
+  .languages {
+    margin-left: 10%;
+  }
+
+  #work h2, #work .h2, #social h2, #social .h2 {
+    margin-left: 10%;
+  }
+
+  .pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .pages a {
+    width: 344px;
+    height: 258px;
+    margin: 10px auto;
+  }
+}
+.social {
   padding-bottom: 3rem;
 }
-main .social a {
+.social a {
   color: #AB9F8D;
 }
-main .social a i {
+.social a i {
   font-size: 3rem;
 }
 
