@@ -10720,6 +10720,10 @@ main {
   color: #AB9F8D;
   text-shadow: 0 3px 3px #3F3A32, 0 -3px 3px #3F3A32, 3px 0 3px #3F3A32, -3px 0 3px #3F3A32;
 }
+.pages a .frame .inner hr {
+  color: #AB9F8D;
+  height: 2px;
+}
 .pages a .frame .inner p {
   font-size: 1em;
 }
