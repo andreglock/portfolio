@@ -10786,6 +10786,8 @@ main {
   }
   .pages a .frame .inner {
     height: 422px;
+    width: 102%;
+    margin-left: -1%;
     transform: translateY(421px);
     transition: 300ms;
   }
