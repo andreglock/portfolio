@@ -1,12 +1,8 @@
 $bg-color: #212529;
-$text-color: #AB9F8D;
+$text-color: #AB9F8D; $navbar-dark-brand-color: $text-color;
 $bgt-color: #21252998;
 $text-shadow: #3F3A32;
 $sharp-shadow: #7B7162;
-
-$effect-border: #7B7162;
-$effect-shadow:  #AB9F8D;
-$effect-text: #3F3A32;
 
 // This is where you can import other stylesheets or write your scss code
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -19,7 +15,7 @@ body {
     margin-top: 56px;
 }
 
-section {
+section, footer {
     padding-top: 56px;
 }
 
@@ -56,7 +52,7 @@ main {
     .heroimg {
         width: 180px;
         height: 300px;
-        animation: infinite background-circle 4s;
+        animation: infinite bg-circle 4s;
         background-image: radial-gradient(circle, transparent 0%, $bg-color 60%, $bg-color 100%), url(../images/hero1.gif);
         background-size: cover;
         background-repeat: no-repeat;
@@ -74,17 +70,6 @@ main {
   
     66% {
         transform: translate(0, -50px);
-    }
-}
-
-@keyframes background-circle {
-    
-    0%, 100% { 
-        background-color: transparent;
-    }
-
-    50% {
-        background-color: $text-shadow;
     }
 }
 
@@ -134,9 +119,21 @@ main {
 
 @include media-breakpoint-up(sm) {
     .hero .heroimg {
-        width: 250px;
-        background-image: radial-gradient(circle at 60%, transparent 0%, $bg-color 60%, $bg-color 100%), url(../images/hero1.gif);
-        margin-right: 60px;
+        width: 100%;
+        background-image: url(../images/hero1.gif);
+        background-size: 67.5%;
+        background-position-x: right 60px;
+        animation: none;
+        .heromask {
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 60%, transparent 0%, $bg-color 57%, $bg-color 100%);
+        }
+    }
+
+    .hero .herowrap {
+        width: 370px;
+        animation: infinite bg-sharp 7s cubic-bezier(.4,.6,.6,.4);
     }
 
     .languages {
@@ -169,10 +166,12 @@ main {
         text-shadow: 7px 0 10px $sharp-shadow, 0 -7px 10px $sharp-shadow, 0 7px 10px $sharp-shadow, -7px 0 10px $sharp-shadow;
     }
     
-    .hero .heroimg {
-        width: 330px;
-        height: 350px;
-        margin-right: 100px;
+    .hero .heroimg, .hero .herowrap {
+        width: 500px;
+        height: 405px;
+        .heromask {
+            background-image: radial-gradient(circle at 60%, transparent 0%, $bgt-color 30%, $bg-color 57%, $bg-color 100%);
+        }
     }
 
     .pages a { 
@@ -210,10 +209,10 @@ main {
 
 /* animation on h1 */
     .swing h1:hover {
-        color: $effect-text;
-        background-color: $effect-shadow;
-        box-shadow: 0 0 20px $effect-shadow, 0 0 80px $effect-shadow, 0 0 160px $effect-shadow,
-        0 0 320px $effect-shadow;
+        color: $text-shadow;
+        background-color: $text-color;
+        box-shadow: 0 0 20px $text-color, 0 0 80px $text-color, 0 0 160px $text-color,
+        0 0 320px $text-color;
         border-radius: 60px;
         transition-delay: 1500ms;
     }
@@ -228,7 +227,7 @@ main {
         transform: translateX(-118%);
         width: 100%;
         height: 4px;
-        background: linear-gradient(90deg, transparent, $effect-shadow);
+        background: linear-gradient(90deg, transparent, $text-color);
     }
     
     .swing h1:hover > span:nth-child(1) {
@@ -241,7 +240,7 @@ main {
         transform: translateX(100%);
         width: 100%;
         height: 4px;
-        background: linear-gradient(270deg, transparent, $effect-shadow);
+        background: linear-gradient(270deg, transparent, $text-color);
     }
     
     .swing h1:hover > span:nth-child(2) {
@@ -254,7 +253,7 @@ main {
         transform: translateY(-138%);
         width: 4px;
         height: 100%;
-        background: linear-gradient(180deg, transparent, $effect-shadow);
+        background: linear-gradient(180deg, transparent, $text-color);
     }
     
     .swing h1:hover > span:nth-child(3) {
@@ -267,7 +266,7 @@ main {
         transform: translateY(100%);
         width: 4px;
         height: 100%;
-        background: linear-gradient(360deg, transparent, $effect-shadow);
+        background: linear-gradient(360deg, transparent, $text-color);
     }
     
     .swing h1:hover > span:nth-child(4) {
@@ -277,6 +276,27 @@ main {
 
 }
 
+@keyframes bg-circle {
+    
+    0%, 100% { 
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: $text-shadow;
+    }
+}
+
+@keyframes bg-sharp {
+    
+    0%, 100% { 
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: $text-color;
+    }
+}
 
 /* image ratio 4:3 */
 #codelicious {
