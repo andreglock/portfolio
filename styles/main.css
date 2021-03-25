@@ -10632,6 +10632,7 @@ textarea.form-control-lg {
 
 body {
   margin-top: 56px;
+  font-family: sans-serif;
 }
 
 section, footer {
@@ -10672,7 +10673,10 @@ main {
   background-image: radial-gradient(circle, transparent 0%, #212529 60%, #212529 100%), url(../images/hero1.gif);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: right 0;
+  background-position-x: 0, -40px;
+}
+.hero .herowrap, .hero .heroimg, .hero .heromask {
+  overflow: hidden;
 }
 
 @keyframes swing {
@@ -10735,7 +10739,7 @@ main {
     width: 100%;
     background-image: url(../images/hero1.gif);
     background-size: 67.5%;
-    background-position-x: right 60px;
+    background-position-x: 68%;
     animation: none;
   }
   .hero .heroimg .heromask {
