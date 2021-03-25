@@ -4129,7 +4129,7 @@ textarea.form-control-lg {
 }
 
 .navbar-dark .navbar-brand {
-  color: #fff;
+  color: #AB9F8D;
 }
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
   color: #fff;
@@ -10634,7 +10634,7 @@ body {
   margin-top: 56px;
 }
 
-section {
+section, footer {
   padding-top: 56px;
 }
 
@@ -10668,7 +10668,7 @@ main {
 .hero .heroimg {
   width: 180px;
   height: 300px;
-  animation: infinite background-circle 4s;
+  animation: infinite bg-circle 4s;
   background-image: radial-gradient(circle, transparent 0%, #212529 60%, #212529 100%), url(../images/hero1.gif);
   background-size: cover;
   background-repeat: no-repeat;
@@ -10684,14 +10684,6 @@ main {
   }
   66% {
     transform: translate(0, -50px);
-  }
-}
-@keyframes background-circle {
-  0%, 100% {
-    background-color: transparent;
-  }
-  50% {
-    background-color: #3F3A32;
   }
 }
 .pages {
@@ -10740,9 +10732,21 @@ main {
 
 @media (min-width: 576px) {
   .hero .heroimg {
-    width: 250px;
-    background-image: radial-gradient(circle at 60%, transparent 0%, #212529 60%, #212529 100%), url(../images/hero1.gif);
-    margin-right: 60px;
+    width: 100%;
+    background-image: url(../images/hero1.gif);
+    background-size: 67.5%;
+    background-position-x: right 60px;
+    animation: none;
+  }
+  .hero .heroimg .heromask {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 60%, transparent 0%, #212529 57%, #212529 100%);
+  }
+
+  .hero .herowrap {
+    width: 370px;
+    animation: infinite bg-sharp 7s cubic-bezier(0.4, 0.6, 0.6, 0.4);
   }
 
   .languages {
@@ -10774,10 +10778,12 @@ main {
     text-shadow: 7px 0 10px #7B7162, 0 -7px 10px #7B7162, 0 7px 10px #7B7162, -7px 0 10px #7B7162;
   }
 
-  .hero .heroimg {
-    width: 330px;
-    height: 350px;
-    margin-right: 100px;
+  .hero .heroimg, .hero .herowrap {
+    width: 500px;
+    height: 405px;
+  }
+  .hero .heroimg .heromask, .hero .herowrap .heromask {
+    background-image: radial-gradient(circle at 60%, transparent 0%, #21252998 30%, #212529 57%, #212529 100%);
   }
 
   .pages a {
@@ -10875,6 +10881,22 @@ main {
   .swing h1:hover > span:nth-child(4), .swing .h1:hover > span:nth-child(4) {
     transform: translateY(-130%);
     transition: 1500ms 1125ms;
+  }
+}
+@keyframes bg-circle {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #3F3A32;
+  }
+}
+@keyframes bg-sharp {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #AB9F8D;
   }
 }
 /* image ratio 4:3 */
