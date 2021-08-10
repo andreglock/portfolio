@@ -10825,7 +10825,7 @@ main {
   .swing h1:hover, .swing .h1:hover {
     color: #3F3A32;
     background-color: #AB9F8D;
-    box-shadow: 0 0 20px #AB9F8D, 0 0 80px #AB9F8D, 0 0 160px #AB9F8D, 0 0 320px #AB9F8D;
+    box-shadow: 0 0 20px #cfc0aa88, 0 0 80px #cfc0aa88, 0 0 160px #cfc0aa88, 0 0 320px #cfc0aa88;
     border-radius: 60px;
     transition-delay: 1500ms;
   }
@@ -10904,6 +10904,10 @@ main {
   }
 }
 /* image ratio 4:3 */
+#movieapp {
+  background-image: url(../images/MovieReactApp.png);
+}
+
 #codelicious {
   background-image: url(../images/codelicious.png);
 }
