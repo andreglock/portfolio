@@ -1,5 +1,6 @@
 $bg-color: #212529;
 $text-color: #AB9F8D; $navbar-dark-brand-color: $text-color;
+$text-color-shadow: #cfc0aa88;
 $bgt-color: #21252998;
 $text-shadow: #3F3A32;
 $sharp-shadow: #7B7162;
@@ -215,8 +216,8 @@ main {
     .swing h1:hover {
         color: $text-shadow;
         background-color: $text-color;
-        box-shadow: 0 0 20px $text-color, 0 0 80px $text-color, 0 0 160px $text-color,
-        0 0 320px $text-color;
+        box-shadow: 0 0 20px $text-color-shadow, 0 0 80px $text-color-shadow, 0 0 160px $text-color-shadow,
+        0 0 320px $text-color-shadow;
         border-radius: 60px;
         transition-delay: 1500ms;
     }
@@ -303,6 +304,10 @@ main {
 }
 
 /* image ratio 4:3 */
+#movieapp {
+    background-image: url(../images/MovieReactApp.png);
+}
+
 #codelicious {
     background-image: url(../images/codelicious.png);
 }
