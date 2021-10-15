@@ -10904,6 +10904,10 @@ main {
   }
 }
 /* image ratio 4:3 */
+#memoryHighscores {
+  background-image: url(../images/memoryHighscores.png);
+}
+
 #movieapp {
   background-image: url(../images/MovieReactApp.png);
 }
